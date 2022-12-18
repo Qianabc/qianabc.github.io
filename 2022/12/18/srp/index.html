@@ -13,7 +13,8 @@
     
 
     
-        <meta name="description" content="这是一篇测试文章"/>
+        <meta name="description" content="Motivation：该原则表明，如果你有多个原因去改变一个类，那么应该把这些引起变化的原因分离开，把这个类分成多个类，每个类只负责处理一种改变。当你做出某种改变时，只需要修改负责处理该改变的类。当我们去改变一个具有多个职责的类时可能会影响该类的其他功能。
+一个类应该只受一种变化的影响。单一职责原则"/>
     
 
     <!--Author-->
@@ -23,12 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="测试"/>
+        <meta property="og:title" content="单一职责原则(SRP)"/>
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="这是一篇测试文章"/>
+        <meta property="og:description" content="Motivation：该原则表明，如果你有多个原因去改变一个类，那么应该把这些引起变化的原因分离开，把这个类分成多个类，每个类只负责处理一种改变。当你做出某种改变时，只需要修改负责处理该改变的类。当我们去改变一个具有多个职责的类时可能会影响该类的其他功能。
+一个类应该只受一种变化的影响。单一职责原则"/>
     
 
     <!--Open Graph Site Name-->
@@ -55,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>测试 - Mirai的博客</title>
+    <title>单一职责原则(SRP) - Mirai的博客</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -168,7 +170,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>测试</h1>
+                    <h1>单一职责原则(SRP)</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -195,7 +197,7 @@
                         
 
 
-<a href="/tags/原创/">#原创</a>
+<a href="/tags/Java/">#Java</a>
 
 
                     
@@ -204,7 +206,7 @@
                     
                         
 
-<a href="/categories/Java/">Java</a>/ <a href="/categories/Java/多线程/">多线程</a>
+<a href="/categories/Java-设计模式/">Java 设计模式</a>/ <a href="/categories/Java-设计模式/面向对象设计原则/">面向对象设计原则</a>
 
                     
                 </div>
@@ -215,11 +217,14 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>这是一篇测试文章</p>
-<img src="/2022/12/18/%E6%B5%8B%E8%AF%95/test.jpg" class="">
+                <h1 id="Motivation："><a href="#Motivation：" class="headerlink" title="Motivation："></a>Motivation：</h1><p>该原则表明，如果你有多个原因去改变一个类，那么应该把这些引起变化的原因分离开，把这个类分成多个类，每个类只负责处理一种改变。当你做出某种改变时，只需要修改负责处理该改变的类。当我们去改变一个具有多个职责的类时可能会影响该类的其他功能。</p>
+<p>一个类应该只受一种变化的影响。单一职责原则简单而直观，但是在实际实现中可能是很困难的.</p>
+<p><strong>实例</strong><br>假设我们需要一个对象保存email 信息，在下面的例子中我们将使用 IEMAIL 接口。初看起来，一切都很好。但是仔细分析我们会发现我们的 IEMAIL 接口和 Email 类具有两个职责(两种引起改变的原因)。一个是在一些类似pop3 和 imap 的 email 协议下使用该类，如果需要支持其他的协议，需要以其他的方式格式化内容字段，并且需要添加新的代码来支持新的协议。<br>另一个是 Content 字段，尽管 content 字段是字符串类型，或许我们将来要支持其他的格式，例如 HTML 格式。<br>如果我们只用一个类，一个职责的改变可能会影响另一个：<br>• 添加新的协议需要添加新的代码解析和格式化内容字段。<br>• 添加新的内容类型(例如 HTML)需要为每种已实现的协议添加代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> //single responsibility principle - bad example</span><br><span class="line"> interface interface interface interface IEmail &#123;</span><br><span class="line"> public void setSender(String sender);</span><br><span class="line"> public void setReceiver(String receiver);</span><br><span class="line"> public void setContent(String content);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> class Email implements implements implements implements IEmail &#123;</span><br><span class="line"> public void setSender(String sender) &#123;</span><br><span class="line"> // set sender;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> public void setReceiver(String receiver) &#123;</span><br><span class="line"> // set receiver;</span><br><span class="line"> &#125;</span><br><span class="line"> public void setContent(String content) &#123;</span><br><span class="line">// set content;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/test.jpg" alt="图片引用方法二"></p>
-<p><img src="/images/test.png" alt="图片引用方法三"></p>
+<p>我们可以创建一个新的 IContent 接口和一个新的 Content 类来分离职责。让每一个类只承担一个职责可以给我们的设计带来更多的灵活性：<br>• 添加新的协议时只需要修改 Email 类。<br>• 添加新的内容类型时只需要修改 Content 类。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">1. single responsibility principle - good example</span><br><span class="line">2.</span><br><span class="line">3. interface interface interface interface IEmail &#123;</span><br><span class="line">4. public void setSender(String sender);</span><br><span class="line">5. public void setReceiver(String receiver);</span><br><span class="line">6. public void setContent(IContent content);</span><br><span class="line">7. &#125;</span><br><span class="line">8.</span><br><span class="line">9. interface interface interface interface IContent &#123;</span><br><span class="line">10. public String getAsString(); // used for serialization</span><br><span class="line">11. &#125;</span><br><span class="line">12.</span><br><span class="line">13. class Email implements implements implements implements IEmail &#123;</span><br><span class="line">14. public void setSender(String sender) &#123;</span><br><span class="line">15. // set sender;</span><br><span class="line">16. &#125;</span><br><span class="line">17.</span><br><span class="line">18. public void setReceiver(String receiver) &#123;</span><br><span class="line">19. // set receiver;</span><br><span class="line">20. &#125;</span><br><span class="line">21.</span><br><span class="line">22. public void setContent(IContent content) &#123;</span><br><span class="line">23. // set content;</span><br><span class="line">24. &#125;</span><br><span class="line">25. &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Summary</strong>：<br>单一职责原则代表了设计应用程序时一种很好的识别类的方式，并且它提醒你思考一个类的所有演化方式。只有对应用程序的工作方式有了很好的理解，才能很好的分离职责。</p>
 
 
                 

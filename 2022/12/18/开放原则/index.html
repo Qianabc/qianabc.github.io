@@ -13,6 +13,9 @@
     
 
     
+        <meta name="description" content="Motivation： 一个设计良好的应用程序应该充分考虑到开发和维护阶段需求的频繁变化，通常情况下，添加一个新的功能需要做出很多修改，我们应该使对已有代码的修改最小化，因为他们已经经过了测试。对现有代码做出修改将会以一种不可预料的方式影响它们的已有功能。
+Details of OCI： 一个软件实"/>
+    
 
     <!--Author-->
     
@@ -21,10 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Mirai的博客"/>
+        <meta property="og:title" content="开闭原则(OCI)"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Motivation： 一个设计良好的应用程序应该充分考虑到开发和维护阶段需求的频繁变化，通常情况下，添加一个新的功能需要做出很多修改，我们应该使对已有代码的修改最小化，因为他们已经经过了测试。对现有代码做出修改将会以一种不可预料的方式影响它们的已有功能。
+Details of OCI： 一个软件实"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>Java - Mirai的博客</title>
+    <title>开闭原则(OCI) - Mirai的博客</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -156,62 +162,96 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Java</h1>
+                <div class="post-heading">
+                    <h1>开闭原则(OCI)</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2022-12-18
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Java/">#Java</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Java-设计模式/">Java 设计模式</a>/ <a href="/categories/Java-设计模式/面向对象设计原则/">面向对象设计原则</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2022/12/18/111/">
-        <h1 class="post-title archive">
-            111
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2022-12-18
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2022/12/18/测试/">
-        <h1 class="post-title archive">
-            测试
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2022-12-18
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Motivation："><a href="#Motivation：" class="headerlink" title="Motivation："></a>Motivation：</h1><p> 一个设计良好的应用程序应该充分考虑到开发和维护阶段需求的频繁变化，通常情况下，添加一个新的功能需要做出很多修改，我们应该使对已有代码的修改最小化，因为他们已经经过了测试。对现有代码做出修改将会以一种不可预料的方式影响它们的已有功能。</p>
+<h1 id="Details-of-OCI："><a href="#Details-of-OCI：" class="headerlink" title="Details of OCI："></a>Details of OCI：</h1><p> 一个软件实体应该对扩展开放，对修改关闭。开闭原则是说我们应该努力设计不需要修改的模块。在扩展系统的行为时，我们只需要添加新的代码，而不需要修改已有的代码。一般可以通过添加新的子类和重写父类的方法来实现。 </p>
+<p>满足开闭原则的模块符合下面两个标准：<br> • <strong>对扩展开放</strong>：模块的行为可以被扩展从而满足新的需求。<br> • <strong>对修改关闭</strong>：不允许修改模块的源代码。（或者尽量使修改最小化）</p>
+<p>怎样实现开闭原则</p>
+<ul>
+<li>抽象  </li>
+<li>多态</li>
+<li>继承</li>
+<li>接口</li>
 </ul>
+<p>要想使一个软件系统的所有模块都满足开闭原则是不太现实的，不过我们应该努力使大部分模块满足开闭原则。开闭原则是面向对象设计的核心，满足该原则可以达到最大限度的复用和可维护性。</p>
+<p>#案例<br>某软件公司开发的CRM系统可以显示各种类型的图表，如饼状图和柱状图等，为了支持多种图表显示方式，原始设计方案如图1所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">......  </span><br><span class="line">if (type.equals(&quot;pie&quot;)) &#123;  </span><br><span class="line">    PieChart chart = new PieChart();  </span><br><span class="line">    chart.display();  </span><br><span class="line">&#125;  </span><br><span class="line">else if (type.equals(&quot;bar&quot;)) &#123;  </span><br><span class="line">    BarChart chart = new BarChart();  </span><br><span class="line">    chart.display();  </span><br><span class="line">&#125;  </span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>在该代码中，如果需要增加一个新的图表类，如折线图LineChart，则需要修改ChartDisplay类的display()方法的源代码，增加新的判断逻辑，违反了开闭原则。</p>
+<p>现对该系统进行重构，使之符合开闭原则。</p>
+<p>在本实例中，由于在ChartDisplay类的display()方法中针对每一个图表类编程，因此增加新的图表类不得不修改源代码。可以通过抽象化的方式对系统进行重构，使之增加新的图表类时无须修改源代码，满足开闭原则。</p>
+<p>具体做法如下：</p>
+<p>(1) 增加一个抽象图表类AbstractChart，将各种具体图表类作为其子类；</p>
+<p>(2) ChartDisplay类针对抽象图表类进行编程，由客户端来决定使用哪种具体图表。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
