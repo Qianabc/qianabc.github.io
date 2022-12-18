@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qianabc.github.io/2022/12/18/111/</loc>
+    
+    <lastmod>2022-12-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://qianabc.github.io/2022/12/18/%E6%B5%8B%E8%AF%95/</loc>
     
     <lastmod>2022-12-18</lastmod>
@@ -39,6 +48,13 @@
   
   <url>
     <loc>http://qianabc.github.io/categories/Java/</loc>
+    <lastmod>2022-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://qianabc.github.io/categories/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2022-12-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
