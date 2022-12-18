@@ -1,3 +1,5 @@
+http://qianabc.github.io/tags/index.html
+http://qianabc.github.io/categories/index.html
 http://qianabc.github.io/2022/12/18/111/
 http://qianabc.github.io/2022/12/18/%E6%B5%8B%E8%AF%95/
 http://qianabc.github.io/2022/12/17/hello-world/
